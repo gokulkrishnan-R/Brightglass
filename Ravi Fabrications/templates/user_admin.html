@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>User Admin Area - BrightGlass Plywoods</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bright Glass Plywoods</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('order_status.check_by_Order_id', id=user.id) }}"><strong>Check Order</strong></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('profile_update_panel.update_profile', id=user.id) }}"><strong>Edit Account</strong></a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <form action="{{ url_for('delete_profile.delete_account', id=user.id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+                            {{ form.hidden_tag() }}  
+                            <button type="submit" class="btn btn-link nav-link" style="padding: 0; border: none; background: none;">
+                                <strong>Delete Account</strong>
+                            </button>
+                        </form>
+                    </li>
+                --> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('book_slot.slot_booking', id=user.id) }}"><strong>Place Order</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <strong><a class="nav-link" href="{{ url_for('main.index') }}">Home Page</a></strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero text-white text-center">
+        <div class="container">
+            <h1>User Admin Area</h1>
+            <p>Manage your orders and account details</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Flash Messages Section -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="alert-container">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+        <!-- End-Of-Flash-Message -->
+
+        <section class="my-5">
+            <div class="container">
+                <h2 class="text-center">Your Orders</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Service</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>                    
+                        {% for order in orders %}
+                        <tr>
+                            <!--
+                            <td>#{{ order.user_id }}</td>
+                            <td>{{ order.service_name }}</td>
+                            <td>{{ order.status }}</td>
+                            -->
+                            <td>{{ order.order_id }}</td>  <!-- Display Order ID -->
+                            <td>{{ order.service }}</td>
+                            <!-- Display Service Type -->
+                            <!--<td>{{ order.number_of_items }}</td>
+                            <td>{{ order.delivery_area }}</td>
+                            <td>{{ order.delivery_address }}</td>
+                            <td>{{ order.mobile_number }}</td>-->
+                            <td>{{ order.status }}</td>
+                            <td>
+                                <form action="{{ url_for('delete_orders.delete_customer_order', id = order.id) }}" method="POST">
+                                    <!-- {{ csrf_token() }} -->
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="4" class="text-center">No orders found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center my-4">
+            <p>&copy; 2024 Bright Glass Plywoods. All Rights Reserved.</p>
+            <p><a href="{{ url_for('main.index') }}">Back to Home</a></p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}

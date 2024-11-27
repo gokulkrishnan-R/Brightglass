@@ -1,0 +1,30 @@
+<!-- Site_Owner_Signup -->
+ 
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center">Site Owner Signup</h2>
+
+    <form method="POST" action="{{ url_for('site_owner.site_owner_signup') }}">
+        
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.ownername.label(class="form-label") }}
+            {{ form.ownername(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.ownerpassword.label(class="form-label") }}
+            {{ form.ownerpassword(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

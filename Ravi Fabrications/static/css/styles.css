@@ -1,0 +1,289 @@
+/* Hero Section */
+.hero {
+    background-color: #333;
+    padding: 150px 0;
+    color: white;
+    background: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+        url('../images/Logo BG images/Plywood Door Entrance.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: background 0.3s ease; /* Smooth transition effect */
+}
+
+.hero:hover {
+    background-image: url('../images/header-bg.jpg');
+    filter: brightness(0.2); /* Increases brightness on hover */
+}
+
+.hero .container {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow to make the text readable without hiding the image */
+    z-index: 2;
+    position: relative;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.btn-danger {
+    cursor: pointer;
+}
+
+/* Service Cards */
+.service-card {
+    height: 400px;
+    border: none; /* Removed outer border */
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-title-back {
+     border: 2px solid #000; /* Inner border color */
+     padding: 10px; /* Space between border and title */
+     display: inline-block; /* Ensures the border wraps around the title */
+     background-color: rgba(0, 0, 0, 0.6);
+     /*background-color: #f0f0f0; /* Background color */
+}
+
+/* Inner border for the card titles */
+.service-card h5.card-title {
+    /*border-bottom: 3px solid #007bff; /* Inner bottom blue border for titles */
+    /*padding-bottom: 5px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+
+}
+
+/* Card front and back equal space */
+.card-front, .card-back {
+    flex: 1;
+}
+
+.card-front {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+/* Styling for inner content */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-card .card-front {
+    padding: 20px;
+}
+
+.service-card .card-back {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+/* Blue border for card inner elements */
+#card1 .card-inner,
+#card2 .card-inner,
+#card3 .card-inner,
+#card4 .card-inner,
+#card5 .card-inner,
+#card6 .card-inner {
+    border: 3px solid #007bff; /* Blue inner border for cards */
+    border-radius: 12px;
+    padding: 15px;
+}
+
+/* Remove outer border */
+.service-card {
+    border: none;
+}
+
+/* Add background images for cards */
+#card1 {
+    background-image: url('transparent-img1.png');
+}
+
+#card2 {
+    background-image: url('transparent-img2.png');
+}
+
+#card3 {
+    background-image: url('transparent-img3.png');
+}
+
+#card4 {
+    background-image: url('transparent-img4.png');
+}
+
+#card5 {
+    background-image: url('transparent-img5.png');
+}
+
+#card6 {
+    background-image: url('transparent-img6.png');
+}
+
+
+/* Gallery Section */
+#gallery {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 200px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 15px;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 15px;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* Contact Section */
+footer {
+    padding: 75px 0;
+    font-size: 1.0rem;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+footer a {
+    color: #007bff;
+}
+
+/* Contact Hero */
+.contact-hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 80px 0;
+    color: white;
+}
+
+/* Form Container */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Button Customization */
+.btn-primary {
+    width: 125px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 20px;
+    }
+}
+
+.my-5 {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Additional styles for forms */
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}

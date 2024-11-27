@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Quotation Details</h1>
+
+        <!-- Quotation Information Table -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Service Type</th>
+                        <th>Area Distributed</th>
+                        <th>Cost (INR)</th>
+                        <th>Selling Price (INR)</th>
+                        <th>Maximum Delivery Estimate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Plywood Services -->
+                    <tr>
+                        <td>Marine Grade Plywood</td>
+                        <td>Pan-India</td>
+                        <td>₹1200</td>
+                        <td>₹1500</td>
+                        <td>7-10 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Commercial Grade Plywood</td>
+                        <td>South India</td>
+                        <td>₹800</td>
+                        <td>₹1000</td>
+                        <td>5-7 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Fire-Retardant Plywood</td>
+                        <td>North India</td>
+                        <td>₹1500</td>
+                        <td>₹1800</td>
+                        <td>10-12 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Water-Resistant Plywood</td>
+                        <td>Pan-India</td>
+                        <td>₹1300</td>
+                        <td>₹1600</td>
+                        <td>8-11 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Decorative Plywood</td>
+                        <td>Pan-India</td>
+                        <td>₹1800</td>
+                        <td>₹2200</td>
+                        <td>10-14 Days</td>
+                    </tr>
+
+                    <!-- Custom Creations -->
+                    <tr>
+                        <td>Custom Furniture Creations</td>
+                        <td>Pan-India</td>
+                        <td>₹2500</td>
+                        <td>₹3000</td>
+                        <td>15-20 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Cabinet Solutions</td>
+                        <td>Local</td>
+                        <td>₹2000</td>
+                        <td>₹2400</td>
+                        <td>10-15 Days</td>
+                    </tr>
+
+                    <!-- PVC Door Solutions -->
+                    <tr>
+                        <td>PVC Door Installation</td>
+                        <td>Pan-India</td>
+                        <td>₹1500</td>
+                        <td>₹1800</td>
+                        <td>7-10 Days</td>
+                    </tr>
+                    <tr>
+                        <td>PVC Door Customization</td>
+                        <td>Local</td>
+                        <td>₹1200</td>
+                        <td>₹1500</td>
+                        <td>5-8 Days</td>
+                    </tr>
+
+                    <!-- Plywood Door Repair and Maintenance -->
+                    <tr>
+                        <td>Plywood Door Repair</td>
+                        <td>Local</td>
+                        <td>₹1000</td>
+                        <td>₹1200</td>
+                        <td>3-5 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Plywood Door Maintenance</td>
+                        <td>Local</td>
+                        <td>₹800</td>
+                        <td>₹1000</td>
+                        <td>2-4 Days</td>
+                    </tr>
+
+                    <!-- Elegant Glass Door Creations -->
+                    <tr>
+                        <td>Elegant Glass Door Installation</td>
+                        <td>Pan-India</td>
+                        <td>₹3000</td>
+                        <td>₹3500</td>
+                        <td>12-15 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Glass Door Designs</td>
+                        <td>Local</td>
+                        <td>₹3500</td>
+                        <td>₹4000</td>
+                        <td>15-20 Days</td>
+                    </tr>
+
+                    <!-- Secure Door Lock Solutions -->
+                    <tr>
+                        <td>High-Security Lock Installation</td>
+                        <td>Local</td>
+                        <td>₹800</td>
+                                                <td>₹1000</td>
+                        <td>2-4 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Lock Repair Services</td>
+                        <td>Local</td>
+                        <td>₹600</td>
+                        <td>₹800</td>
+                        <td>1-2 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Key Duplication Services</td>
+                        <td>Local</td>
+                        <td>₹200</td>
+                        <td>₹300</td>
+                        <td>Same Day</td>
+                    </tr>
+
+                    <!-- Additional Services -->
+                    <tr>
+                        <td>Consultation Services</td>
+                        <td>Pan-India</td>
+                        <td>₹500</td>
+                        <td>₹700</td>
+                        <td>1-3 Days</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery Charges</td>
+                        <td>Local</td>
+                        <td>₹300</td>
+                        <td>₹400</td>
+                        <td>Varies</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Place Order Button -->
+        <div class="text-center mt-4">
+            <a href="{{ url_for('book_slot.slot_booking') }}" class="btn btn-primary btn-lg">Place Order</a>
+        </div>
+
+        <div class="mt-4 p-3 border rounded bg-light">
+            <h2>Total Estimate</h2>
+            <p><strong>Total Cost:</strong> ₹XXXX</p>
+            <p><strong>Total Selling Price:</strong> ₹XXXX</p>
+            <p><strong>Estimated Delivery Time:</strong> XX Days</p>
+            <p class="text-danger"><strong>Please note that delivery charges are applicable if you are too far from our firm! Delivery Charges are Inclusive.</strong></p>
+        </div>
+
+        <div class="mt-4 p-3 border rounded bg-light">
+            <h2>Contact Information</h2>
+            <p>If you have any questions or need further assistance, please contact us at:</p>
+            <p><strong>Email:</strong> <a href="mailto:brightglass@gmail.com">brightglass@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919894235680">+91-9894235680</a></p>
+                <p class="text-danger"><strong>Please note that delivery charges are applicable if you are too far from our firm! Delivery Charges are Inclusive.</strong></p>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+

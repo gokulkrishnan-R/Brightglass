@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<div class="container mt-5">
+        <body>
+        <h1 class="text-center">Your Order Dashboard</h1>
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Service Type</th>
+                    <th>Number of Items</th>
+                    <th>Delivery Area</th>
+                    <th>Delivery Address</th>
+                    <th>Mobile Number</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders_2 %}
+                    {% for user in users_2 %}
+                    <tr>
+                        <td>{{ order.order_id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ order.service  }}</td>
+                        <td>{{ order.number_of_items }}</td>
+                        <td>{{ order.delivery_area }}</td>
+                        <td>{{ order.delivery_address }}</td>
+                        <td>{{ order.mobile_number }}</td>
+                        <td>
+                            <span class="badge badge-{{ 'success' if order.status == 'received' else 'warning' if order.status == 'pending' else 'info' }}">
+                                {{ order.status.capitalize() }}
+                            </span>
+                        </td>
+                        <!--<td>
+                            <button type="submit" class="btn btn-danger"><a href="{{ url_for('owner_profile_deletion.owner_customer_order_deletion') }}">Delete Order</a></button>
+                        </td>-->
+
+                    
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock%}

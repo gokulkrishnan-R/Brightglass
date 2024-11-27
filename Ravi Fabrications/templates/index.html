@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if not is_reset_page %}
+<main>
+        <section class="my-5">
+            <div class="container">
+        <section id="introduction" class="my-5">
+            <h2 class="text-center">Introduction</h2>
+            <p class="text-center">With over 25 years of experience, we provide top-quality plywoods, glass installations, and door services for residential and commercial projects. Our commitment to excellence and customer satisfaction sets us apart.</p>
+        </section>
+         <section class="my-5 text-center">
+            <h2>Welcome to Our Website!</h2>
+            <p>Unmatched Expertise in Plywoods, Glassworks, and Door Installations in Coimbatore!</p>
+        </section>
+
+        <section id="services" class="my-5">
+    <h2 class="text-center">Our Services</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card service-card" id="card1">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-body text-center">
+                            <div class="card-title-back">
+                                <h5 class="card-title">Custom Creations</h5>
+                            </div>
+                            <p class="card-text">Transform your vision into reality with our tailor-made plywood, glass, and door solutions designed just for you.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-body">
+                            <p>Discover the artistry behind our custom creation process!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card service-card" id="card2">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-body text-center">
+                            <div class="card-title-back">
+                                <h5 class="card-title">PVC Door Solutions</h5>
+                            </div>
+                            <p class="card-text">Expertly crafted PVC doors designed for durability and style. Explore our top-notch PVC door designs and innovations!</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-body">
+                            <p>Explore our top-notch PVC door designs and innovations!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card service-card" id="card3">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-body text-center">
+                            <div class="card-title-back">
+                                <h5 class="card-title">Plywood Door Repair and Maintenance</h5>
+                            </div>
+                            <p class="card-text">Dependable repairs and maintenance for all your plywood doors and structures.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-body">
+                            <p>Trust us for reliable service and quality craftsmanship!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card service-card" id="card4">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-body text-center">
+                            <div class="card-title-back">
+                                <h5 class="card-title">Elegant Glass Door Creations</h5>
+                            </div>
+                            <p class="card-text">Beautifully crafted glass doors that enhance your home or business.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-body">
+                            <p>Discover our stunning selection of custom glass door designs!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card service-card" id="card5">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-body text-center">
+                            <div class="card-title-back">
+                                <h5 class="card-title">Secure Door Lock Solutions</h5>
+                            </div>
+                            <p class="card-text">Specialized in creating and installing high-quality door lockers for enhanced security.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-body">
+                            <p>Learn more about our reliable door locking systems!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card service-card" id="card6">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-body text-center">
+                            <div class="card-title-back">
+                                <h5 class="card-title">Toughened Glass Solutions</h5>
+                            </div>
+                            <p class="card-text">Expertly crafted toughened glass for enhanced durability and safety in various applications.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-body">
+                            <p>Discover our innovative toughened glass solutions!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="my-5">
+            <h2 class="text-center">Gallery</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="gallery-item">
+                             <img src="{{ url_for('static', filename='images/welding1.jpg') }}" alt="Welding Project 1" class="img-fluid gallery-img">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="gallery-item">
+                            <img src="{{ url_for('static', filename='images/welding2.jpg') }}" alt="Welding Project 2" class="img-fluid gallery-img">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="gallery-item">
+                            <img src="{{ url_for('static', filename='images/welding3.jpg') }}" alt="Welding Project 3" class="img-fluid gallery-img">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="gallery-item">
+                            <img src="{{ url_for('static', filename='images/welding4.jpg') }}" alt="Welding Project 4" class="img-fluid gallery-img">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="gallery-item">
+                            <img src="{{ url_for('static', filename='images/welding5.jpg') }}" alt="Welding Project 5" class="img-fluid gallery-img">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="gallery-item">
+                            <img src="{{ url_for('static', filename='images/welding6.jpg') }}" alt="Welding Project 6" class="img-fluid gallery-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    {% endif %}
+{% endblock %}

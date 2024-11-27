@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Slot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Book a Slot</h1>
+        <form method="POST" action="{{ url_for('book_slot.slot_booking') }}">
+        
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                <label for="service">Service Type</label>
+                <select name="service" class="form-control" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="service1">Custom Creations</option>
+                    <option value="service2">PVC Door Solutions</option>
+                    <option value="service3">Plywood Door</option>
+                    <option value="service4">Elegant Glass Door</option>
+                    <option value="service4">Door Locks and Duplication Keys </option>
+                    <option value="service4">Toughened Glass </option>
+                    
+                    <!-- Add more services as needed -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="number_of_items">Number of Items</label>
+                <input type="number" name="number_of_items" class="form-control" required min="1">
+            </div>
+
+            <div class="form-group">
+                <label for="delivery_area">Area for Delivery</label>
+                <input type="text" name="delivery_area" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery_address">Address to be Delivered</label>
+                <textarea name="delivery_address" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="order_description">Brief Description of Order (Optional)</label>
+                <textarea name="order_description" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile_number">Mobile Number</label>
+                <input type="tel" name="mobile_number" class="form-control" required pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number">
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Confirm Order</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+{% endblock %}
